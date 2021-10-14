@@ -52,10 +52,16 @@ class ItemList extends StatelessWidget {
                   return const LoadingIndicator();
                 } else {
                   final List<Item> items = (state as ItemsLoadOnSuccess).items;
-                  return ListView.builder(
+                  return ListView.separated(
                     shrinkWrap: true,
-                    itemBuilder: (context, index) =>
-                        Center(child: Text(items[index].name)),
+                    separatorBuilder: (_, __) => const SizedBox(
+                      height: 10,
+                    ),
+                    itemBuilder: (context, index) => Center(
+                      child: Text(
+                        items[index].toString(),
+                      ),
+                    ),
                     itemCount: items.length,
                   );
                 }

@@ -12,7 +12,7 @@ class TagsBloc extends Bloc<TagsEvent, TagsState> {
         final List<Tag> tags = List.generate(
           10,
           (index) => Tag(
-            index.toString(),
+            'Tag $index',
           ),
         );
         emit(TagsLoadOnSuccess(tags, tags));

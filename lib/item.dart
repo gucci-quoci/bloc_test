@@ -8,4 +8,9 @@ class Item extends Equatable {
 
   @override
   List<Object?> get props => [name, tags];
+
+  @override
+  String toString() {
+    return 'Item{name: $name, tags: $tags}';
+  }
 }

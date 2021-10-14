@@ -20,10 +20,10 @@ class ItemsBloc extends Bloc<ItemsEvent, ItemsState> {
           final List<Item> items = List.generate(
             20,
             (index) => Item(
-              index.toString(),
+              'Item $index',
               List<String>.generate(
                 3,
-                (_) => Random().nextInt(10).toString(),
+                (_) => 'Tag ${Random().nextInt(10).toString()}',
               ),
             ),
           );
